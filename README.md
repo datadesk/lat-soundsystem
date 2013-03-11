@@ -13,3 +13,7 @@ Install the dependencies
 
 <pre><code>$ sudo apt-get install python-pygame
 $ sudo pip install flask</code></pre>
+
+Fire up the server
+
+<pre><code>$ python soundsystem.py</code></pre>
