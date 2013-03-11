@@ -6,3 +6,10 @@
                                                                                          </code></pre>
 
 The voice of the Los Angeles Times Data Desk 
+
+h3. Getting started
+
+Install the dependencies
+
+<pre><code>$ sudo apt-get install python-pygame
+$ sudo pip install flask</code></pre>
