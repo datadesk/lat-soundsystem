@@ -12,6 +12,14 @@ def play_sound(filename):
     pygame.mixer.music.play()
 
 
+@app.route("/")
+def rollout():
+    """
+    Homepage.
+    """
+    return "Welcome to the LAT Soundsystem"
+
+
 @app.route("/rollout/")
 def rollout():
     """
