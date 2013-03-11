@@ -13,7 +13,7 @@ def play_sound(filename):
 
 
 @app.route("/")
-def rollout():
+def homepage():
     """
     Homepage.
     """
