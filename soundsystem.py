@@ -1,15 +1,6 @@
-import pygame
+import os
 from flask import Flask
 app = Flask(__name__)
-
-
-def play_sound(filename):
-    """
-    Play the provided sound file.
-    """
-    pygame.init()
-    pygame.mixer.music.load(filename)
-    pygame.mixer.music.play()
 
 
 @app.route("/")
@@ -25,7 +16,7 @@ def rollout():
     """
     Play a snippet from Ludacris' "Rollout (My Business)"
     """
-    play_sound("rollout.mp3")
+    os.system("aplay rollout.wav")
     return "ROOOOOLLLOUT!"
 
 
