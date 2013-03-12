@@ -16,7 +16,7 @@ def rollout():
     """
     Play a snippet from Ludacris' "Rollout (My Business)"
     """
-    os.system("aplay rollout.wav")
+    os.system("sudo aplay rollout.wav")
     return "ROOOOOLLLOUT!"
 
 
