@@ -7,4 +7,4 @@
 
 The voice of the Los Angeles Times Data Desk 
 
-[Demo](http://www.youtube.com/watch?v=tABcjExMmxk)
+[Watch it in action](http://www.youtube.com/watch?v=tABcjExMmxk)
