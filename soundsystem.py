@@ -1,7 +1,7 @@
 import os
 from flask import Flask
 app = Flask(__name__)
-
+THIS_DIR = os.path.dirname(__file__)
 
 @app.route("/")
 def homepage():
@@ -16,7 +16,8 @@ def rollout():
     """
     Play a snippet from Ludacris' "Rollout (My Business)"
     """
-    os.system("sudo aplay rollout.wav")
+    path = os.path.join(THIS_DIR, 'rollout.wav')
+    os.system("sudo aplay %s" % path)
     return "ROOOOOLLLOUT!"
 
 
