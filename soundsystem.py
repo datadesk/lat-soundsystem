@@ -22,7 +22,7 @@ def rollout():
 
 
 @app.route("/hampster-dance/")
-def rollout():
+def hampster_dance():
     """
     Play the theme song from hampsterdance.com
     """
