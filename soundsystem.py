@@ -24,7 +24,7 @@ def rollout():
 @app.route("/hampster-dance/")
 def hampster_dance():
     """
-    Play the theme song from hampsterdance.com
+    The soundtrack of the Internet that once was.
     """
     path = os.path.join(THIS_DIR, 'hampsterdance.wav')
     os.system("sudo aplay %s" % path)
