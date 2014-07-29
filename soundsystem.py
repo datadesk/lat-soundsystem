@@ -21,5 +21,15 @@ def rollout():
     return "ROOOOOLLLOUT!"
 
 
+@app.route("/hampster-dance/")
+def rollout():
+    """
+    Play the theme song from hampsterdance.com
+    """
+    path = os.path.join(THIS_DIR, 'hampsterdance.wav')
+    os.system("sudo aplay %s" % path)
+    return "Dance! Hampster! Dance!"
+
+
 if __name__ == "__main__":
     app.run()
