@@ -14,7 +14,7 @@ def homepage():
 @app.route("/rollout/")
 def rollout():
     """
-    Play a snippet from Ludacris' "Rollout (My Business)"
+    What you got in that bag?
     """
     path = os.path.join(THIS_DIR, 'rollout.wav')
     os.system("sudo aplay %s" % path)
