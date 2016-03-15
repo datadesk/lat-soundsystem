@@ -34,11 +34,21 @@ def hampster_dance():
 @app.route("/snap/")
 def snap():
     """
-    Play a of the Addams Family theme
+    The Addams Family snaps it out.
     """
     path = os.path.join(THIS_DIR, 'snap.wav')
     os.system("sudo aplay %s" % path)
     return "OH SNAP!"
+
+
+@app.route("/take-me-to-the-clouds-above/")
+def take_me_to_the_clouds_above():
+    """
+    Let Whitney tell it.
+    """
+    path = os.path.join(THIS_DIR, 'takemetothecloudsabove.wav')
+    os.system("sudo aplay %s" % path)
+    return "Mmmm Hmmm!"
 
 
 if __name__ == "__main__":
