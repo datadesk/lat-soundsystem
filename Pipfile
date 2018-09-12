@@ -5,6 +5,8 @@ name = "pypi"
 
 [packages]
 Flask = "*"
+dweepy = "*"
+pygame = "*"
 
 [dev-packages]
 

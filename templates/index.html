@@ -1,49 +1,62 @@
-<html>
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<style>
-		h1 {
-			margin: 20px 0;
+{% extends "base.html" %}
+
+{% block css %}
+	<link rel="stylesheet" href="/static/index.css"></link>
+{% endblock %}
+
+{% block content %}
+	<h1>This is LAT Soundsystem</h1>
+
+	<div id="background">
+
+	        <div id="result"></div>
+
+	         <div id="main">
+	             <div id="first-rows">
+	              <button class="del-bg" id="delete">Del</button>
+	                 <button value="%" class="btn-style operator opera-bg fall-back">%</button>
+	                 <button value="+" class="btn-style opera-bg value align operator">+</button>
+	                 </div>
+
+	               <div class="rows">
+	             	 <button value="7" onclick="play('take-me-to-the-clouds-above');" class="btn-style num-bg num first-child">7</button>
+	                 <button value="8" onclick="play('take-me-to-the-clouds-above');" class="btn-style num-bg num">8</button>
+	                 <button value="9" onclick="play('take-me-to-the-clouds-above');" class="btn-style num-bg num">9</button>
+	                 <button value="-" class="btn-style opera-bg operator">-</button>
+	               </div>
+
+	                 <div class="rows">
+	                 <button value="4" onclick="play('snap');" class="btn-style num-bg num first-child">4</button>
+	                 <button value="5" onclick="play('snap');" class="btn-style num-bg num">5</button>
+	                 <button value="6" onclick="play('snap');" class="btn-style num-bg num">6</button>
+	                 <button value="*" class="btn-style opera-bg operator">x</button>
+	                 </div>
+
+	                 <div class="rows">
+	                 <button value="1" onclick="play('rollout');" class="btn-style num-bg num first-child">1</button>
+	                 <button value="2" onclick="play('rollout');" class="btn-style num-bg num">2</button>
+	                 <button value="3" onclick="play('rollout');" class="btn-style num-bg num">3</button>
+	                 <button value="/" class="btn-style opera-bg operator">/</button>
+	                 </div>
+
+	                 <div class="rows">
+	                 <button value="0" class="num-bg zero" id="delete">0</button>
+	                 <button value="." class="btn-style num-bg period fall-back">.</button>
+	                 <button value="=" id="eqn-bg" class="eqn align">=</button>
+	                 </div>
+
+	             </div>
+
+	         </div>
+
+	<script>
+		var play = function (name) {
+			// For the user
+			var audio = new Audio('/static/' + name + ".wav");
+			audio.play();
+			// On the soundsystem
+			var url = "/" + name + "/";
+			$.ajax(url, function (data) { console.log(data); })
 		}
-	</style>
-</head>
-<body>
-<div class="container">
-	<h1>Welcome to the LAT Soundsystem</h1>
-	
-	<h3>Alerts</h3>
-	<table class="table">
-		<tr>
-			<td><a href="/rollout/">Rollout</a></td>
-		</tr>
-		<tr>
-			<td><a href="/snap/">Snap!</a></td>
-		</tr>
-		<tr>
-			<td><a href="/take-me-to-the-clouds-above/">Take me to the clouds above</a></td>
-		</tr>
-	</table>
-
-	<h3>Latest pings</h3>
-	<table class="table">
-		<thead>
-			<tr>
-				<th>created</th>
-				<th>content</th>
-			</tr>
-		</thead>
-		<tbody>
-			{% for obj in object_list %}
-			<tr>
-				<td>{{ obj.created }}</td>
-				<td>{{ obj.content }}</td>
-			</tr>
-			{% endfor %}
-		</tbody>
-	</table>
-</div>
-</body>
-</html>
-
-
+	</script>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Latest dweets</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>created</th>
+            <th>content</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for obj in object_list %}
+        <tr>
+            <td>{{ obj.created }}</td>
+            <td>{{ obj.content }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
