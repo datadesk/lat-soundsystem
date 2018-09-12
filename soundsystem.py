@@ -1,14 +1,21 @@
 import os
+import dweepy
 from flask import Flask
+from flask import render_template
 app = Flask(__name__)
+
+# Settings
 THIS_DIR = os.path.dirname(__file__)
+DWEEPY_NAME = 'lat-soundsystem'
+
 
 @app.route("/")
 def homepage():
     """
     Homepage.
     """
-    return "Welcome to the LAT Soundsystem"
+    object_list = dweepy.get_dweets_for(DWEEPY_NAME)
+    return render_template("index.html", object_list=object_list)
 
 
 @app.route("/rollout/")
@@ -52,4 +59,4 @@ def take_me_to_the_clouds_above():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(use_reloader=True, debug=True)
