@@ -5,7 +5,7 @@ from flask import render_template
 app = Flask(__name__)
 
 # Settings
-THIS_DIR = os.path.dirname(__file__)
+THIS_DIR = '/home/pi/Code/lat-soundsystem/repo/'
 DWEEPY_NAME = 'lat-soundsystem'
 
 
@@ -24,7 +24,7 @@ def rollout():
     What you got in that bag?
     """
     path = os.path.join(THIS_DIR, 'rollout.wav')
-    os.system("sudo aplay %s" % path)
+    _play(path)
     return "ROOOOOLLLOUT!"
 
 
@@ -34,7 +34,7 @@ def hampster_dance():
     The soundtrack of the Internet that once was.
     """
     path = os.path.join(THIS_DIR, 'hampsterdance.wav')
-    os.system("sudo aplay %s" % path)
+    _play(path)
     return "Dance! Hampster! Dance!"
 
 
@@ -44,7 +44,7 @@ def snap():
     The Addams Family snaps it out.
     """
     path = os.path.join(THIS_DIR, 'snap.wav')
-    os.system("sudo aplay %s" % path)
+    _play(path)
     return "OH SNAP!"
 
 
@@ -54,8 +54,19 @@ def take_me_to_the_clouds_above():
     Let Whitney tell it.
     """
     path = os.path.join(THIS_DIR, 'takemetothecloudsabove.wav')
-    os.system("sudo aplay %s" % path)
+    _play(path)
     return "Mmmm Hmmm!"
+
+
+def _play(path):
+    import pygame
+    pygame.mixer.init()
+    pygame.mixer.music.load(path)
+    pygame.mixer.music.set_volume(1.0)
+    pygame.mixer.music.play()
+
+    while pygame.mixer.music.get_busy() == True:
+            pass
 
 
 if __name__ == "__main__":
