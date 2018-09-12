@@ -5,7 +5,7 @@ from flask import render_template
 app = Flask(__name__)
 
 # Settings
-THIS_DIR = '/home/pi/Code/lat-soundsystem/repo/'
+THIS_DIR = os.path.dirname(__file__)
 DWEEPY_NAME = 'lat-soundsystem'
 
 
