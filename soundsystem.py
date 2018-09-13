@@ -94,7 +94,7 @@ def take_me_to_the_clouds_above():
     """
     Let Whitney tell it.
     """
-    _play('take-me-to-the-clouds-above.wav')
+    _play('take_me_to_the_clouds_above.wav')
     return jsonify("Mmmm Hmmm!")
 
 
