@@ -1,0 +1,14 @@
+[Unit]
+Description=dweet
+After=network.target
+
+[Service]
+ExecStart=/home/pi/Code/lat-soundsystem/bin/python -u listener.py
+WorkingDirectory=/home/pi/Code/lat-soundsystem/repo
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target

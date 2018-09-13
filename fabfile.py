@@ -13,7 +13,13 @@ def pull():
 
 
 def restartapache():
-    sudo("sudo service apache2 restart")
+    sudo("service apache2 restart")
+
+
+def updateservice():
+    with cd("/home/pi/Code/lat-soundsystem/repo"):
+        sudo("cp listener.service /etc/systemd/system/dweet.service")
+    sudo("systemctl start dweet.service")
 
 
 def deploy():
