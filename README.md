@@ -7,4 +7,5 @@
 
 The voice of the Los Angeles Times Data Desk 
 
-[Watch it in action](http://www.youtube.com/watch?v=tABcjExMmxk)
+* [Use it yourself](http://datadesk.github.io/lat-soundsystem/)
+* [Watch it in action](http://www.youtube.com/watch?v=tABcjExMmxk)
