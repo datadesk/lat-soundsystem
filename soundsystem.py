@@ -1,7 +1,9 @@
 import os
 import dweepy
 import pygame
+from flask import abort
 from flask import Flask
+from flask import request
 from flask import jsonify
 from flask import render_template
 app = Flask(__name__)
@@ -17,6 +19,38 @@ def homepage():
     Homepage.
     """
     return render_template("index.html")
+
+
+@app.route("/webhook/", methods=["POST"])
+def webhook():
+    """
+    Parse and process webhooks from the outside world.
+    """
+    # Get the POST data
+    data = request.get_json()
+
+    # Make sure it's the right structure
+    try:
+        hook_name = data['content']['hook']
+    except KeyError:
+        abort(400)
+
+    # Get the hook, provided it exists
+    hooks_dict = {
+        "rollout": rollout,
+        "hampster_dance": hampster_dance,
+        "snap": snap,
+        "take_me_to_the_clouds_above": "take_me_to_the_clouds_above"
+    }
+    try:
+        hook = hooks_dict[hook_name]
+    except KeyError:
+        abort(400)
+
+    print("Running hook: {}".format(hook_name))
+
+    # Run the hook
+    return hook()
 
 
 @app.route("/dweets/")

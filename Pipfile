@@ -8,6 +8,7 @@ Flask = "*"
 dweepy = "*"
 pygame = "*"
 fabric = "==1.13.2"
+requests = "*"
 
 [dev-packages]
 
