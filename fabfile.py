@@ -22,6 +22,11 @@ def updateservice():
     sudo("systemctl start dweet.service")
 
 
+def servicestatus():
+    sudo("systemctl status dweet.service")
+
+
 def deploy():
     pull()
     restartapache()
+    updateservice()
