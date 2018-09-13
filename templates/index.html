@@ -55,7 +55,7 @@
 			var audio = new Audio('/static/' + name + ".wav");
 			audio.play();
 			// On the soundsystem
-			var url = "/" + name + "/";
+			var url = "https://dweet.io/dweet/for/lat-soundsystem?hook=" + name;
 			$.ajax(url, function (data) { console.log(data); })
 		}
 	</script>
