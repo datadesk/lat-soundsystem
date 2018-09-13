@@ -7,6 +7,7 @@ name = "pypi"
 Flask = "*"
 dweepy = "*"
 pygame = "*"
+fabric = "==1.13.2"
 
 [dev-packages]
 
