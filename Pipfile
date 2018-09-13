@@ -9,6 +9,7 @@ dweepy = "*"
 pygame = "*"
 fabric = "==1.13.2"
 requests = "*"
+frozen-flask = "*"
 
 [dev-packages]
 
