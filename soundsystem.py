@@ -40,7 +40,7 @@ def webhook():
         "rollout": rollout,
         "hampster_dance": hampster_dance,
         "snap": snap,
-        "take_me_to_the_clouds_above": "take_me_to_the_clouds_above"
+        "take_me_to_the_clouds_above": take_me_to_the_clouds_above
     }
     try:
         hook = hooks_dict[hook_name]
