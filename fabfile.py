@@ -22,6 +22,10 @@ def updateservice():
     sudo("systemctl start dweet.service")
 
 
+def stopservice():
+    sudo("systemctl stop dweet.service")
+
+
 def servicestatus():
     sudo("systemctl status dweet.service")
 
