@@ -1,4 +1,4 @@
-from fabric.api import env, cd, run, sudo
+from fabric.api import env, cd, run, sudo, local
 
 
 env.hosts = ("raspberrypi.local",)
@@ -35,6 +35,10 @@ def stopservice():
 
 def servicestatus():
     sudo("systemctl status dweet.service")
+
+
+def freeze():
+    local("python freeze.py")
 
 
 def deploy():

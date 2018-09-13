@@ -1,5 +1,6 @@
 from flask_frozen import Freezer
 from soundsystem import app
+app.config['FREEZER_DESTINATION'] = 'docs'
 freezer = Freezer(app, with_no_argument_rules=False, log_url_for=False)
 
 
