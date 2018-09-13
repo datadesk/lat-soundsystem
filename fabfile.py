@@ -19,6 +19,13 @@ def restartapache():
 def updateservice():
     with cd("/home/pi/Code/lat-soundsystem/repo"):
         sudo("cp listener.service /etc/systemd/system/dweet.service")
+
+
+def restartservice():
+    sudo("systemctl restart dweet.service")
+
+
+def startservice():
     sudo("systemctl start dweet.service")
 
 
@@ -33,4 +40,6 @@ def servicestatus():
 def deploy():
     pull()
     restartapache()
+    stopservice()
     updateservice()
+    startservice()
