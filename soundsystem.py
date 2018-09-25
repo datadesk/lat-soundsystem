@@ -1,6 +1,8 @@
 import os
+import time
 import dweepy
 import pygame
+import subprocess
 from flask import abort
 from flask import Flask
 from flask import request
@@ -68,6 +70,7 @@ def rollout():
     What you got in that bag?
     """
     _play('rollout.wav')
+    _open("rollout.html")
     return jsonify("ROOOOOLLLOUT!")
 
 
@@ -98,14 +101,27 @@ def take_me_to_the_clouds_above():
     return jsonify("Mmmm Hmmm!")
 
 
+def _open(name):
+    """
+    Open the provided HTML file.
+    """
+    path = os.path.join(THIS_DIR, 'templates', 'webhooks', name)
+    p = subprocess.Popen(["chromium-browser", path])
+    time.sleep(5)
+    p.kill()
+
+
 def _play(name):
+    """
+    Play the provided sound file.
+    """
     pygame.mixer.init()
     pygame.mixer.music.load(os.path.join(THIS_DIR, 'static', name))
     pygame.mixer.music.set_volume(1.0)
     pygame.mixer.music.play()
 
     while pygame.mixer.music.get_busy() == True:
-            pass
+        pass
 
 
 if __name__ == "__main__":

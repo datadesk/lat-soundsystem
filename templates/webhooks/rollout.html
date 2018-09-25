@@ -1,0 +1,36 @@
+<style>
+    .marquee {
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+    .marquee div {
+      display: block;
+      position: absolute;
+      overflow: hidden;
+      animation: marquee 4s linear infinite;
+    }
+    .marquee h1 {
+      float: left;
+      width: 400%;
+      margin: 0;
+      line-height: 100vh;
+      font-size: 100vh;
+      font-family: monospace;
+      font-style: italic;
+      letter-spacing: -50px;
+    }
+
+    @keyframes marquee {
+      0% { left: 0; }
+      100% { left: -400%; }
+    }
+</style>
+<body>
+    <div class="marquee">
+      <div>
+          <h1>ROLLOUT ROLLOUT ROLLOUT ROLLOUT</h1>
+      </div>
+  </div>
+</body>
