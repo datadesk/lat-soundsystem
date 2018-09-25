@@ -70,7 +70,7 @@ def rollout():
     What you got in that bag?
     """
     _play('rollout.wav')
-    _open("rollout.html")
+    # _open("rollout.html")
     return jsonify("ROOOOOLLLOUT!")
 
 
